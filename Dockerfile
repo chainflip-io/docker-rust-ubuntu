@@ -1,4 +1,6 @@
-FROM buildpack-deps:jammy
+ARG distribution=jammy
+
+FROM buildpack-deps:${distribution}
 
 # based on https://github.com/rust-lang/docker-rust/blob/76e3311a6326bc93a1e96ad7ae06c05763b62b18/1.65.0/buster/slim/Dockerfile
 
