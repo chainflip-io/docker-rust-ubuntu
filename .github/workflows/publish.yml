@@ -6,7 +6,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: rust
+  IMAGE_NAME: chainflip-io/rust
   RUST_VERSION: "1.65.0"
 
 jobs:
