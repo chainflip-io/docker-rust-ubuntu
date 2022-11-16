@@ -1,6 +1,6 @@
 ARG distribution=jammy
 
-FROM buildpack-deps:${distribution}
+FROM buildpack-deps:${distribution}-curl
 
 # based on https://github.com/rust-lang/docker-rust/blob/76e3311a6326bc93a1e96ad7ae06c05763b62b18/1.65.0/buster/slim/Dockerfile
 
@@ -9,6 +9,7 @@ ENV RUSTUP_HOME=/usr/local/rustup \
     PATH=/usr/local/cargo/bin:$PATH \
     RUST_VERSION=1.65.0
 
+RUN dpkg --print-architecture
 RUN set -eux; \
     dpkgArch="$(dpkg --print-architecture)"; \
     case "${dpkgArch##*-}" in \
